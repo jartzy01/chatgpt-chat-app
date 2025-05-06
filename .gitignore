@@ -1,0 +1,7 @@
+# Node
+node_modules/
+npm-debug.log*
+# Env
+.env
+# Frontend build (if any)
+dist/
