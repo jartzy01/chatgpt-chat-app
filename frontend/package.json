@@ -2,17 +2,18 @@
   "name": "frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "firebase-config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel serve ./index.html ./login.html --open login.html --no-hmr",
+    "build": "parcel build index.html --dist-dir dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^11.6.1"
+    "firebase": "^9.23.0"
   },
   "devDependencies": {
-    "parcel": "^2.14.4"
+    "parcel": "^2.14.4",
+    "process": "^0.11.10"
   }
 }

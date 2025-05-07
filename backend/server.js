@@ -1,28 +1,39 @@
 import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import OpenAI from 'openai';
+import cors    from 'cors';
+import dotenv  from 'dotenv';
+import OpenAI  from 'openai';
 
 dotenv.config();
 const app = express();
-app.use(cors());
+
+// allow your frontend origin
+app.use(
+    cors({
+        origin: [ 'http://localhost:3000', 'http://localhost:1234' ]
+    })
+);
 app.use(express.json());
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 app.post('/chat', async (req, res) => {
-    const { message } = req.body;
+    const { message, uid } = req.body;
     try {
-        const response = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
-        messages: [{ role: 'user', content: message }],
+        const completion = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [
+            { role: "system", content: "You are a helpful assistant." },
+            { role: "user",   content: message }
+        ]
         });
-        res.json({ reply: response.choices[0].message.content });
+
+        const reply = completion.choices[0].message.content;
+        res.json({ reply });
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'OpenAI request failed' });
+        console.error("OpenAI error:", err);
+        res.status(500).json({ error: "AI service error" });
     }
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Backend listening on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server listening on ${PORT}`));

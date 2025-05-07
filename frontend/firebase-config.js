@@ -1,6 +1,7 @@
-export const firebaseconfig = {
+export const firebaseConfig = {
     apiKey: "AIzaSyCi7JkElh5eEqDHerEiP0PXkX7KGgU3kdU",
     authDomain: "chatgpt-chat-app-a360b.firebaseapp.com",
+    databaseURL: "https://chatgpt-chat-app-a360b-default-rtdb.firebaseio.com",
     projectId: "chatgpt-chat-app-a360b",
     storageBucket: "chatgpt-chat-app-a360b.firebasestorage.app",
     messagingSenderId: "973665070131",
