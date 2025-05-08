@@ -118,7 +118,9 @@ npx serve frontend
 2. **Frontend** (with live reload):
 
    ```bash
-   live-server frontend --port=5500
+   bash
+   cd frontend
+   npm run dev
    ```
 
 3. Open your browser at `http://localhost:5500`, type a message, and see the chat powered by `http://localhost:3001/chat`.
