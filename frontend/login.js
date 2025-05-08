@@ -36,32 +36,5 @@ document.getElementById('login-form')
     }
   });
 
-// switch to signup
-const showSignup = document.getElementById('show-signup');
-showSignup.addEventListener('click', e => {
-  e.preventDefault();
-  const form = document.getElementById('login-form');
-  form.innerHTML = `
-    <input type="email"    name="email"    placeholder="Email"    required />
-    <input type="password" name="password" placeholder="Password" required />
-    <button type="submit">Sign Up</button>
-  `;
-  form.onsubmit = signupHandler;
-});
 
-async function signupHandler(e) {
-  e.preventDefault();
-  const email    = e.target.email.value;
-  const password = e.target.password.value;
-  try {
-    const userCred = await createUserWithEmailAndPassword(auth, email, password);
-    await set(ref(database, 'users/' + userCred.user.uid), {
-      email:     userCred.user.email,
-      createdAt: Date.now()
-    });
-    // now redirect
-    window.location.href = 'index.html';
-  } catch (err) {
-    alert('Signup error: ' + err.message);
-  }
-}
+

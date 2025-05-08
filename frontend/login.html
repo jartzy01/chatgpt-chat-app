@@ -14,9 +14,15 @@
                 <input type="password" id="password" placeholder="Password"/>
                 <button type="submit">Login In</button>
             </form>
-            <button id="show-signup" disabled>Sign up (coming soon)</button>
+            <button id="show-signup">Sign up</button>
         </div>
         <script type="module" src="./login.js"></script>
+        <script>
+            document.getElementById('show-signup')
+                .addEventListener('click', () => {
+                    window.location.href = 'signup.html';
+                });
+        </script>
     </body>
     
 </html>
