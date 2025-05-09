@@ -40,7 +40,7 @@
 74C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\htmlnano\lib133911086361561719 1
 114C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\firebase\functions\dist\auth\react-native\index.d.ts133911091712427304 0
 136C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\firestore\dist\firestore\test\unit\local\test_index_manager.d.ts133911091674201997 0
-53C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist133911941204458235 1
+53C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist133911953727056593 1
 102C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\firebase\firestore\dist\esm\auth\cordova133911091702476415 1
 110C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\remote-config\dist\esm\src\errors.d.ts133911091146755966 0
 86C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\yargs\lib\platform-shims133911091154138169 1
@@ -172,7 +172,7 @@
 81C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\is-number\README.md133911086316639785 0
 129C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\protobufjs\cli\node_modules\markdown-it\lib\rules_core\normalize.js133911091670113665 0
 93C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\caniuse-lite\data\regions\TZ.js133911086381599568 0
-60C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\signup.html133911941203078855 0
+60C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\signup.html133911953714865966 0
 120C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\protobufjs\cli\node_modules\lodash\fp\isArrayLikeObject.js133911091626970866 0
 107C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\analytics\dist\esm\src\factory.d.ts133911091228203580 0
 101C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\firebase\functions\dist\esm\performance133911091715894411 1
@@ -1638,7 +1638,7 @@
 83C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\msgpackr\dist\test.js133911086337109859 0
 116C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\rn\src\core\credentials\email.d.ts133911091596155196 0
 105C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\transformer-js\src\JSTransformer.js133911086337508734 0
-78C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.f72d0d54.js.map133911936188631457 0
+78C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.f72d0d54.js.map133911953721659249 0
 119C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\firebase\compat\messaging\dist\esm\performance\index.d.ts133911091674081991 0
 139C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\database-compat\dist\node-esm\database-compat\src\api\Database.d.ts133911091220596549 0
 97C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\whatwg-url\lib\url-state-machine.js133911091136549427 0
@@ -9013,7 +9013,7 @@
 106C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\firebase\installations\dist\esm\auth\cordova133911091719168528 1
 131C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\browser-cjs\src\core\strategies\custom_token.d.ts133911091578197671 0
 109C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\firebase\installations\dist\esm\auth\index.d.ts133911091719285371 0
-64C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\login.html133911936188139393 0
+64C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\login.html133911953726891257 0
 111C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\firebase\installations\dist\esm\auth\react-native133911091719355382 1
 96C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\logger\dist\index.cjs.js133911091205504312 0
 97C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\firebase\firestore\dist\compat\auth133911091701124977 1
@@ -13175,7 +13175,7 @@
 140C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\rn\src\platform_browser\recaptcha\recaptcha_mock.test.d.ts133911091723547841 0
 106C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@swc\helpers\_\_super_prop_base\package.json133911086370406001 0
 107C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@swc\helpers\_\_set_prototype_of\package.json133911086369649209 0
-65C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\signup.html133911941204408220 0
+65C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\signup.html133911953726891257 0
 118C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@swc\helpers\_\_possible_constructor_return\package.json133911086369589157 0
 122C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@swc\helpers\_\_object_without_properties_loose\package.json133911086369499115 0
 108C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\app-check\dist\src\internal-api.d.ts133911091229685605 0
@@ -13643,7 +13643,7 @@
 140C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\firestore\dist\lite\packages\firestore\src\model\mutation_batch.d.ts133911091622425299 0
 109C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\cordova\src\core\strategies133911091732498373 1
 77C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\watcher133911086347443954 1
-76C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\signup.7753d63b.js.map133911936189874811 0
+76C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\signup.7753d63b.js.map133911953721859546 0
 87C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\watcher-win32-x64133911086316512326 1
 88C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\workers\index.d.ts133911086355224919 0
 85C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\workers\LICENSE133911086330744888 0
@@ -14279,7 +14279,7 @@
 103C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\core\test\fixtures\common-targets133911086380943079 1
 113C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\core\test\fixtures\config-extends-not-found133911086375691112 1
 105C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\core\test\fixtures\config-malformed133911086375472328 1
-71C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\login.a8d7a5a6.js133911936189650570 0
+71C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\login.a8d7a5a6.js133911953721513881 0
 112C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\core\test\fixtures\config-plugin-not-found133911086375522384 1
 103C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@parcel\core\test\fixtures\custom-targets133911086381098328 1
 130C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\firestore\dist\firestore\src\local\memory_persistence.d.ts133911091620603357 0
@@ -17173,7 +17173,7 @@
 103C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\node\test\helpers\api133911091627724998 1
 110C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\node\test\helpers\delay.d.ts133911091583630764 0
 137C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\node\test\helpers\erroring_unavailable_persistence.d.ts133911091606290256 0
-78C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.11755b7d.js.map133911936190098222 0
+78C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.11755b7d.js.map133911953721804141 0
 124C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\node\test\helpers\fake_service_worker.d.ts133911091613221220 0
 122C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\node\test\helpers\id_token_response.d.ts133911091628905108 0
 117C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\auth\dist\node\test\helpers\iframe_event.d.ts133911091635890065 0
@@ -18381,13 +18381,13 @@
 73C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\.bin\semver133911087050931080 0
 77C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\.bin\semver.cmd133911087050941086 0
 93C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\.bin\update-browserslist-db.cmd133911087050761046 0
-74C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.11755b7d.js133911936189650570 0
-75C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.1303bb05.css133911936188244621 0
-79C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.1303bb05.css.map133911936188756854 0
+74C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.11755b7d.js133911953721503767 0
+75C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.1303bb05.css133911953721378397 0
+79C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.1303bb05.css.map133911953721659249 0
 74C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.d047ea7e.js133911934862383161 0
 78C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.d047ea7e.js.map133911934862741500 0
-74C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.f72d0d54.js133911936188139393 0
-64C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\index.html133911936188044114 0
+74C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\frontend.f72d0d54.js133911953721378397 0
+64C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\index.html133911953726891257 0
 75C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\login.3c14d121.js.map133911127690363868 0
-75C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\login.a8d7a5a6.js.map133911936190093112 0
-72C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\signup.7753d63b.js133911936189640018 0
+75C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\login.a8d7a5a6.js.map133911953721839525 0
+72C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\dist\signup.7753d63b.js133911953721543893 0
