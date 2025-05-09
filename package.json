@@ -1,0 +1,29 @@
+{
+  "name": "chatgpt-chat-app",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces":[
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "start:backend": "npm run dev --workspace=backend",
+    "start:frontend": "npm run dev --workspace=frontend",
+    "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "build:frontend": "npm run build --workspace=frontend"
+  },
+  "dependencies": {
+    "concurrently": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jartzy01/chatgpt-chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jartzy01/chatgpt-chat-app/issues"
+  },
+  "homepage": "https://github.com/jartzy01/chatgpt-chat-app#readme"
+}

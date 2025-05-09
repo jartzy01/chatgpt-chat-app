@@ -9,15 +9,15 @@
 </head>
 <body>
     <div class="container">
-        <div id="chat-container">
-            <div id="controls">
-                <button id="new-chat">New Chat</button>
-                <button id="logout">Log out</button>
-            </div>
+        <div id="chat-container">            
             <div id="chat-window"></div>
             <input id="input" placeholder="Type a message…" />
             <button id="send">Send</button>
-            <script type="module" src="./main.js"></script>
+            <div id="controls">
+                <script type="module" src="./main.js"></script>
+                <button id="new-chat">New Chat</button>
+                <button id="logout">Log out</button>
+            </div>
         </div>
         <iframe id="history-frame" src="history.html"></iframe>
     </div> 
