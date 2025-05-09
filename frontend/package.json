@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel serve ./index.html ./login.html ./signup.html --open login.html --no-hmr",
-    "build": "parcel build index.html --dist-dir dist"
+    "dev": "parcel serve ./chat.html ./login.html ./signup.html --open login.html --no-hmr",
+    "build": "parcel build chat.html --dist-dir dist"
   },
   "keywords": [],
   "author": "",

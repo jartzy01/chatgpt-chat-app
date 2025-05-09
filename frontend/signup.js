@@ -32,7 +32,7 @@ document.getElementById('signup-form')
         });
 
         // 4. Redirect into your app (e.g. your chat page)
-            window.location.href = 'index.html';
+            window.location.href = 'chat.html';
         }
         catch (err) {
             console.error('Signup error', err);
