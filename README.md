@@ -1,187 +1,147 @@
-# ChatGPT Chat App
+ChatGPT Chat App
 
-A full-stack chat application powered by OpenAI's ChatGPT API. This project features user authentication and chat history storage using Firebase, alongside a conversational interface built with HTML, CSS, and JavaScript.
+A real-time chat application powered by Firebase (Auth + Realtime Database) on the frontend and OpenAI’s ChatGPT on the backend. It’s organized as an npm workspace monorepo with three services:
 
----
+    backend – Express server that proxies chat messages to OpenAI
 
-## Table of Contents
+    gateway – Lightweight HTTP proxy to unify ports and handle CORS
 
-* [Features](#features)
-* [Project Structure](#project-structure)
-* [Prerequisites](#prerequisites)
-* [Getting Started](#getting-started)
+    frontend – Parcel-bundled HTML/JS app with Firebase authentication and chat UI
 
-  * [Clone the Repository](#clone-the-repository)
-  * [Backend Setup](#backend-setup)
-  * [Frontend Setup](#frontend-setup)
-* [Running Locally](#running-locally)
-* [Building for Production](#building-for-production)
-* [Usage](#usage)
-* [Scripts](#scripts)
-* [Contributing](#contributing)
-* [License](#license)
+Features
 
----
+    User auth (email/password) via Firebase Auth
 
-## Features
+    Chat sessions stored and streamed in Firebase Realtime Database
 
-* **Express.js backend** integrating with OpenAI's ChatGPT API
-* **Firebase Authentication** for user signup and login
-* **Firebase Realtime Database** for storing chat history
-* **Lightweight frontend** using HTML, CSS, and vanilla JavaScript
-* **Parcel bundler** for easy development and production builds
-* **CORS enabled** for local development
+    AI responses from OpenAI’s ChatGPT API
 
----
+    Monorepo setup using npm workspaces for unified scripts
 
-## Project Structure
+Prerequisites
 
-```
-chatgpt-chat-app/
-├── backend/            # Express.js server
-├── frontend/           # Client-side application
-├── .gitignore          # Git ignore rules
-├── README.md           # Project documentation
-└── LICENSE             # MIT License
-```
+    Node.js ≥ 16.x (npm ≥ 7 for workspace support)
 
----
+    An OpenAI API key
 
-## Prerequisites
+    A Firebase project (Auth + Realtime Database enabled)
 
-* **Node.js** v16 or higher
-* **npm** v8 or higher
-* An **OpenAI API Key** (set as `OPENAI_API_KEY`)
-* A **Firebase project** with Web app credentials
+Installation
 
----
+    Clone this repo
 
-## Getting Started
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/your-username/chatgpt-chat-app.git
+git clone https://github.com/jartzy01/chatgpt-chat-app.git
 cd chatgpt-chat-app
-```
 
-### Backend Setup
+Install dependencies
 
-1. Navigate to the backend folder:
+    npm install
 
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
+Configuration
+1. Backend
 
-   ```bash
-   npm install
-   ```
-3. Create a `.env` file in `backend/` with the following content:
+Create a .env file in backend/:
 
-   ```env
-   OPENAI_API_KEY=your_openai_api_key_here
-   PORT=3001           # optional, default is 3001
-   ```
+OPENAI_API_KEY=your_openai_api_key_here
+PORT=3001           # optional; defaults to 3001
 
-### Frontend Setup
+2. Gateway
 
-1. Navigate to the frontend folder:
+By default it proxies:
 
-   ```bash
-   cd ../frontend
-   ```
-2. Install dependencies:
+    Frontend → http://localhost:1234
 
-   ```bash
-   npm install
-   ```
-3. Update `firebase-config.js` with your Firebase Web app credentials:
+    Backend → http://localhost:3001
 
-   ```js
-   export const firebaseConfig = {
-     apiKey: "YOUR_API_KEY",
-     authDomain: "YOUR_AUTH_DOMAIN",
-     databaseURL: "YOUR_DATABASE_URL",
-     projectId: "YOUR_PROJECT_ID",
-     storageBucket: "YOUR_STORAGE_BUCKET",
-     messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-     appId: "YOUR_APP_ID"
-   };
-   ```
+    Exposes gateway on http://localhost:8081
 
----
+To override, create gateway/.env:
 
-## Running Locally
+FRONTEND_PORT=1234
+BACKEND_PORT=3001
+GATEWAY_PORT=8081
 
-### Backend
+3. Frontend
 
-```bash
-cd backend
+In frontend/firebase-config.js, replace the sample config with your Firebase project settings:
+
+export const firebaseConfig = {
+  apiKey: "...",
+  authDomain: "...",
+  databaseURL: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "...",
+  measurementId: "..."
+};
+
+Running Locally
+
+You can start each service individually or all at once:
+All services concurrently
+
 npm run dev
-```
 
-* Runs the server on `http://localhost:3001`
+This will launch:
 
-### Frontend
+    Backend on http://localhost:3001
 
-```bash
-cd frontend
-npm run dev
-```
+    Frontend dev server on http://localhost:1234
 
-* Serves the client on `http://localhost:1234` (opens `login.html` by default)
+    Gateway on http://localhost:8081 (point your browser here)
 
----
+Or separately
 
-## Building for Production
+npm run start:backend   # starts Express + OpenAI
+npm run start:gateway   # starts HTTP proxy
+npm run start:frontend  # starts Parcel dev server
 
-1. Build the frontend:
+Building for Production
 
-   ```bash
-   cd frontend
-   npm run build
-   ```
-2. Deploy the contents of `frontend/dist` to your static hosting provider.
-3. Ensure your backend CORS settings include the production frontend origin.
+    Build the frontend
 
----
+    npm run build:frontend
 
-## Usage
+    Assets will be in frontend/dist/.
 
-1. Open the app in your browser (`login.html`).
-2. Sign up or log in with your Firebase credentials.
-3. Use the chat interface to send messages to ChatGPT.
-4. View past conversations in `history.html`.
+    Deploy
 
----
+        Serve frontend/dist/ from your static host.
 
-## Scripts
+        Run the backend & gateway on your server/VM.
 
-### Backend (in `backend/`)
+        Update the proxy targets in gateway/.env to your public URLs.
 
-* `npm run start` — Start server
-* `npm run dev` — Start server with nodemon
+Project Structure
 
-### Frontend (in `frontend/`)
+chatgpt-chat-app/
+├── backend/
+│   ├── server.js          # Express + OpenAI handler
+│   ├── .env               # OpenAI key, port
+│   └── package.json
+├── gateway/
+│   ├── proxy.js           # HTTP proxy server
+│   └── package.json
+├── frontend/
+│   ├── chat.html          # Main chat UI
+│   ├── login.html         # Login form
+│   ├── signup.html        # Signup form
+│   ├── main.js            # Firebase init & auth wiring
+│   ├── chat.js            # Chat session logic
+│   ├── login.js, signup.js
+│   ├── firebase-config.js # Firebase SDK config
+│   ├── styles.css
+│   └── package.json
+├── package.json           # Root workspace config
+└── .gitignore
 
-* `npm run dev` — Serve files for development
-* `npm run build` — Build for production
+Contributing
 
----
+    Fork the repo
 
-## Contributing
+    Create a feature branch
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feat/YourFeature`)
-3. Commit your changes (`git commit -m "feat: add awesome feature"`)
-4. Push to your branch (`git push origin feat/YourFeature`)
-5. Open a pull request
+    Commit and push
 
-Please follow [Conventional Commits](https://www.conventionalcommits.org/) and provide clear PR descriptions.
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+    Open a PR
