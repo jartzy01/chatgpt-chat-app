@@ -1,39 +1,38 @@
-ChatGPT Chat App
+# ChatGPT Chat App
 
 A real-time chat application powered by Firebase (Auth + Realtime Database) on the frontend and OpenAI’s ChatGPT on the backend. It’s organized as an npm workspace monorepo with three services:
 
-    backend – Express server that proxies chat messages to OpenAI
+1. **backend** – Express server that proxies chat messages to OpenAI  
+2. **gateway** – Lightweight HTTP proxy to unify ports and handle CORS  
+3. **frontend** – Parcel-bundled HTML/JS app with Firebase authentication and chat UI  
 
-    gateway – Lightweight HTTP proxy to unify ports and handle CORS
+---
 
-    frontend – Parcel-bundled HTML/JS app with Firebase authentication and chat UI
+## Features
 
-Features
+- **User auth** (email/password) via Firebase Auth  
+- **Chat sessions** stored and streamed in Firebase Realtime Database  
+- **AI responses** from OpenAI’s ChatGPT API  
+- **Monorepo** setup using npm workspaces for unified scripts  
 
-    User auth (email/password) via Firebase Auth
+---
 
-    Chat sessions stored and streamed in Firebase Realtime Database
+## Prerequisites
 
-    AI responses from OpenAI’s ChatGPT API
+- **Node.js** ≥ 16.x (npm ≥ 7 for workspace support)  
+- An **OpenAI API key**  
+- A **Firebase project** (Auth + Realtime Database enabled)  
 
-    Monorepo setup using npm workspaces for unified scripts
+---
 
-Prerequisites
+## Installation
 
-    Node.js ≥ 16.x (npm ≥ 7 for workspace support)
+1. **Clone this repo**  
+   ```bash
+   git clone https://github.com/jartzy01/chatgpt-chat-app.git
+   cd chatgpt-chat-app
 
-    An OpenAI API key
-
-    A Firebase project (Auth + Realtime Database enabled)
-
-Installation
-
-    Clone this repo
-
-git clone https://github.com/jartzy01/chatgpt-chat-app.git
-cd chatgpt-chat-app
-
-Install dependencies
+    Install dependencies
 
     npm install
 
