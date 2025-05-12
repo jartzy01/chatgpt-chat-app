@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel serve ./index.html ./login.html --open login.html --no-hmr",
+    "dev": "parcel serve ./index.html ./login.html ./signup.html --open login.html --no-hmr",
     "build": "parcel build index.html --dist-dir dist"
   },
   "keywords": [],
