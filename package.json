@@ -4,12 +4,14 @@
   "private": true,
   "workspaces":[
     "backend",
-    "frontend"
+    "frontend",
+    "gateway"
   ],
   "scripts": {
     "start:backend": "npm run dev --workspace=backend",
     "start:frontend": "npm run dev --workspace=frontend",
-    "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:gateway": "npm run start --workspace=gateway",
+    "dev": "concurrently -k -n BACKEND,FRONTEND,GATEWAY -c cyan,green,magenta \"npm run start:backend\" \"npm run start:frontend\" \"npm run start:gateway\"",
     "build:frontend": "npm run build --workspace=frontend"
   },
   "dependencies": {
