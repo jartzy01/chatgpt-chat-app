@@ -19,7 +19,7 @@ const database = getDatabase(app);
 
 // redirect if already signed in
 onAuthStateChanged(auth, user => {
-  if (user) window.location.href = 'index.html';
+  if (user) window.location.href = 'chat.html';
 });
 
 // login
