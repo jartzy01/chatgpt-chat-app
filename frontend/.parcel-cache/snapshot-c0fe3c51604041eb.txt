@@ -33,7 +33,7 @@
 114C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\protobufjs\cli\node_modules\@types\mdurl\format.d.ts133911091778739794 0
 127C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\firestore-compat\dist\test\numeric_transforms.test.d.ts133911091242827313 0
 104C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\protobufjs\cli\node_modules\lodash\ceil.js133911091567580741 0
-58C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\chat.html133912944754869347 0
+58C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\chat.html133912953066104509 0
 127C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\protobufjs\cli\node_modules\xmlcreate\lib\nodes\XmlEntityRef.d.ts133911091782921437 0
 87C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@firebase\logger\dist\src133911091217020940 1
 107C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\protobufjs\cli\node_modules\lodash\_baseGt.js133911091180137891 0
@@ -201,7 +201,7 @@
 81C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\is-number\README.md133911086316639785 0
 129C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\protobufjs\cli\node_modules\markdown-it\lib\rules_core\normalize.js133911091670113665 0
 93C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\caniuse-lite\data\regions\TZ.js133911086381599568 0
-60C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\signup.html133912946425793598 0
+60C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\signup.html133912953066224475 0
 120C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\protobufjs\cli\node_modules\lodash\fp\isArrayLikeObject.js133911091626970866 0
 95C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\@grpc\grpc-js\src\resolver-dns.ts133911091252788860 0
 99C:\Users\jartz\AutomIA\chatgpt-chat-app\frontend\node_modules\protobufjs\cli\node_modules\requizzle133911091783894975 1
