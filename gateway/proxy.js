@@ -1,5 +1,5 @@
 require('dotenv').config();
-const Gateway = require('./gateway');
+const Gateway = require('./Gateway');
 
 //default port numbers
 const FRONTEND_PORT = parseInt(process.env.FRONTEND_PORT, 10) || 1234;
