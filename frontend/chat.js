@@ -72,20 +72,43 @@ function bindSession(sid) {
   sendBtn.onclick = async () => {
     const text = input.value.trim();
     if (!text) return;
-
+  
     // push user message
     const userRef = push(rawRef);
     await set(userRef, { sender: 'user', text, timestamp: Date.now() });
     input.value = '';
-
-    // call your backend
-    const res = await fetch('/api/chat',{
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: text, uid })
-    });
-    const { reply } = await res.json();
-
+  
+    let reply = '';
+  
+    // NEW: Handle /auto messages
+    if (text.startsWith("/auto ")) {
+      try {
+        const response = await fetch("http://localhost:5002/interpret-and-execute", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text.slice(6).trim() }),
+        });
+  
+        const result = await response.json();
+        if (response.ok) {
+          reply = `✅ Automation executed.\n\n${result.generated_code}`;
+        } else {
+          reply = `❌ Error: ${result.error || 'Something went wrong'}`;
+        }
+      } catch (e) {
+        reply = `❌ Automation error: ${e.message}`;
+      }
+    } else {
+      // Normal chat message
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, uid })
+      });
+      const data = await res.json();
+      reply = data.reply;
+    }
+  
     // push bot reply
     const botRef = push(rawRef);
     await set(botRef, { sender: 'bot', text: reply, timestamp: Date.now() });

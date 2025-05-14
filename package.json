@@ -2,7 +2,7 @@
   "name": "chatgpt-chat-app",
   "version": "1.0.0",
   "private": true,
-  "workspaces":[
+  "workspaces": [
     "backend",
     "frontend",
     "gateway"
@@ -15,7 +15,9 @@
     "build:frontend": "npm run build --workspace=frontend"
   },
   "dependencies": {
-    "concurrently": "^8.0.0"
+    "@parcel/watcher": "^2.5.1",
+    "concurrently": "^8.0.0",
+    "parcel": "^2.9.3"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/jartzy01/chatgpt-chat-app/issues"
   },
-  "homepage": "https://github.com/jartzy01/chatgpt-chat-app#readme"
+  "homepage": "https://github.com/jartzy01/chatgpt-chat-app#readme",
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
 }
