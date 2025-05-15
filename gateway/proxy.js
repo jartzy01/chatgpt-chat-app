@@ -1,4 +1,12 @@
 require('dotenv').config();
+const { spawn } = require('child_process');
+const path = require('path');
+
+// launch automation server
+const autoServer = spawn('python', [path.resolve(__dirname, '../automation_server.py')], {stdio: 'inherit'});
+autoServer.on('close', (code) => console.log(`[🚀 automation_server] exited with code ${code}`));
+
+// start gateway proxy
 const Gateway = require('./Gateway');
 
 //default port numbers

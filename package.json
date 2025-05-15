@@ -12,6 +12,7 @@
     "start:frontend": "npm run dev --workspace=frontend",
     "start:gateway": "npm run start --workspace=gateway",
     "dev": "concurrently -k -n BACKEND,FRONTEND,GATEWAY -c cyan,green,magenta \"npm run start:backend\" \"npm run start:frontend\" \"npm run start:gateway\"",
+    "start": "npm run dev",
     "build:frontend": "npm run build --workspace=frontend"
   },
   "dependencies": {
