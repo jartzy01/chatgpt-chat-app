@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
-import os  # ✅ Move this line up here
+import os 
 load_dotenv()
-print("API KEY loaded:", os.getenv("OPENAI_API_KEY"))  # ✅ Debug line
+print("API KEY loaded:", os.getenv("OPENAI_API_KEY"))  
 
 from flask import Flask, request, jsonify
 import openai
@@ -28,7 +28,7 @@ def interpret_and_execute():
     try:
 
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_input}
