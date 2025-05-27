@@ -81,32 +81,22 @@ function bindSession(sid) {
     let reply = '';
   
     // NEW: Handle /auto messages
-    if (text.startsWith("/auto ")) {
-      try {
-        const response = await fetch("http://localhost:5002/interpret-and-execute", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: text.slice(6).trim() }),
-        });
-  
-        const result = await response.json();
-        if (response.ok) {
-          reply = `✅ Automation executed.\n\n${result.generated_code}`;
-        } else {
-          reply = `❌ Error: ${result.error || 'Something went wrong'}`;
-        }
-      } catch (e) {
-        reply = `❌ Automation error: ${e.message}`;
-      }
-    } else {
-      // Normal chat message
-      const res = await fetch('/api/chat', {
+    if (text.startsWith("/pyautogui") || text.startsWith("/selenium")) {
+      const bridgeRes = await fetch('http://localhost:5002/interpret-and-execute', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, uid })
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ message: text })
       });
-      const data = await res.json();
-      reply = data.reply;
+      const { generate_code } = await bridgeRes.json();
+
+      // now send that code to the executor
+      await fetch('http://localhost:5001/execute-automation', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ code: generate_code, type: 'pyautogui' })
+      });
+
+      reply = generate_code;
     }
   
     // push bot reply
