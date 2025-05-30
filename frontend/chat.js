@@ -97,6 +97,19 @@ function bindSession(sid) {
       });
 
       reply = generate_code;
+    } else {
+      const res = await fetch('http://localhost:8081/api/chat', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ message: text, uid })
+      });
+      if (!res.ok) {
+        console.error('AI error', await res.text());
+        reply = '🤖 Sorry, something went wrong.';
+      } else {
+        const { reply: aiReply } = await res.json();
+        reply = aiReply;
+      }
     }
   
     // push bot reply

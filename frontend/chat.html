@@ -1,4 +1,4 @@
-<!-- ../frontend/index.html -->
+<!-- ../frontend/chat.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,17 +9,19 @@
 </head>
 <body>
     <div class="container">
-        <div id="chat-container">            
-            <div id="chat-window"></div>
-            <input id="input" placeholder="Type a message…" />
-            <div id="controls">
-                <button id="send">Send</button>
-                <script type="module" src="./main.js"></script>
-                <button id="new-chat">New Chat</button>
-                <button id="logout">Log out</button>
+        <div id="chat-container">
+            <div id="chat-panel">
+                <div id="chat-window"></div>
+                <input id="input" placeholder="Type a message…" />
+                <div id="controls">
+                    <button id="send">Send</button>
+                    <script type="module" src="./main.js"></script>
+                    <button id="new-chat">New Chat</button>
+                    <button id="logout">Log out</button>
+                </div>
             </div>
+            <iframe id="history-frame" src="history.html"></iframe>
         </div>
-        <iframe id="history-frame" src="history.html"></iframe>
     </div> 
 </body>
 </html>
