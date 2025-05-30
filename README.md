@@ -1,146 +1,106 @@
-# ChatGPT Chat App
+# ChatGPT Chat & Automation App
 
-A real-time chat application powered by Firebase (Auth + Realtime Database) on the frontend and OpenAI’s ChatGPT on the backend. It’s organized as an npm workspace monorepo with three services:
+A web-based chat application powered by ChatGPT and Firebase, with built-in Robotic Process Automation (RPA) capabilities using PyAutoGUI and Selenium. Users can authenticate, chat with AI in real-time, generate automation scripts in natural language, and execute them locally.
 
-1. **backend** – Express server that proxies chat messages to OpenAI  
-2. **gateway** – Lightweight HTTP proxy to unify ports and handle CORS  
-3. **frontend** – Parcel-bundled HTML/JS app with Firebase authentication and chat UI  
+## Architecture
 
----
+This monorepo contains:
+
+* **backend**: Node.js Express server for ChatGPT proxy
+* **gateway**: HTTP proxy for unified ports and CORS
+* **frontend**: Parcel-based web client with Firebase Auth & chat UI
+* **automation\_bridge**: Python Flask service to interpret commands and generate automation code via OpenAI
+* **automation\_server**: Python Flask service to execute generated automation scripts on your machine
+* Root-level configs: `package.json`, `requirements.txt`, `.env`, `README.md`
 
 ## Features
 
-- **User auth** (email/password) via Firebase Auth  
-- **Chat sessions** stored and streamed in Firebase Realtime Database  
-- **AI responses** from OpenAI’s ChatGPT API  
-- **Monorepo** setup using npm workspaces for unified scripts  
-
----
+* **User Authentication** via Firebase (email/password)
+* **Real-time Chat** with messages stored in Firebase Realtime Database
+* **AI Responses** powered by OpenAI's ChatGPT API
+* **Automation Commands** (`/pyautogui`, `/selenium`) to generate and run scripts
+* **Local Script Execution** with PyAutoGUI and Selenium WebDriver
+* **Unified Access** through a single gateway on `http://localhost:8081`
 
 ## Prerequisites
 
-- **Node.js** ≥ 16.x (npm ≥ 7 for workspace support)  
-- An **OpenAI API key**  
-- A **Firebase project** (Auth + Realtime Database enabled)  
+* Node.js 16+ & npm
+* Python 3.10+ & pip
+* A Firebase project (for Auth & Realtime Database)
+* Chrome or Firefox (for Selenium)
 
----
+## Setup
 
-## Installation
+1. **Clone the repository**
 
-1. **Clone this repo**  
    ```bash
-   git clone https://github.com/jartzy01/chatgpt-chat-app.git
+   git clone https://github.com/yourusername/chatgpt-chat-app.git
    cd chatgpt-chat-app
+   ```
 
-    Install dependencies
+2. **Environment Configuration**
 
-    npm install
+   * Copy `.env.example` to `.env` and set:
 
-Configuration
-1. Backend
+     ```env
+     OPENAI_API_KEY=your-openai-api-key
+     FRONTEND_PORT=1234
+     CHAT_PORT=3001
+     AUTO_PORT=5002
+     GATEWAY_PORT=8081
+     ```
+   * Update `frontend/firebase-config.js` with your Firebase credentials.
 
-Create a .env file in backend/:
+3. **Install dependencies**
 
-OPENAI_API_KEY=your_openai_api_key_here
-PORT=3001           # optional; defaults to 3001
+   ```bash
+   npm install
+   pip install -r requirements.txt
+   ```
 
-2. Gateway
+4. **Run Services**
 
-By default it proxies:
+   * **Automation Executor**
 
-    Frontend → http://localhost:1234
+     ```bash
+     python automation_server.py
+     ```
+   * **Automation Bridge**
 
-    Backend → http://localhost:3001
+     ```bash
+     python automation_bridge.py
+     ```
+   * **Node Workspace**
 
-    Exposes gateway on http://localhost:8081
+     ```bash
+     npm run dev
+     ```
 
-To override, create gateway/.env:
+5. **Open the app** in your browser:
 
-FRONTEND_PORT=1234
-BACKEND_PORT=3001
-GATEWAY_PORT=8081
+   ```text
+   http://localhost:8081
+   ```
 
-3. Frontend
+## Usage
 
-In frontend/firebase-config.js, replace the sample config with your Firebase project settings:
+* Send chat messages to interact with AI
+* Use commands:
 
-export const firebaseConfig = {
-  apiKey: "...",
-  authDomain: "...",
-  databaseURL: "...",
-  projectId: "...",
-  storageBucket: "...",
-  messagingSenderId: "...",
-  appId: "...",
-  measurementId: "..."
-};
+  * `/pyautogui <instruction>` to generate PyAutoGUI scripts
+  * `/selenium <instruction>` to generate Selenium scripts
+* View script generation and execution results in the chat window
 
-Running Locally
+## Folder Structure
 
-You can start each service individually or all at once:
-All services concurrently
-
-npm run dev
-
-This will launch:
-
-    Backend on http://localhost:3001
-
-    Frontend dev server on http://localhost:1234
-
-    Gateway on http://localhost:8081 (point your browser here)
-
-Or separately
-
-npm run start:backend   # starts Express + OpenAI
-npm run start:gateway   # starts HTTP proxy
-npm run start:frontend  # starts Parcel dev server
-
-Building for Production
-
-    Build the frontend
-
-    npm run build:frontend
-
-    Assets will be in frontend/dist/.
-
-    Deploy
-
-        Serve frontend/dist/ from your static host.
-
-        Run the backend & gateway on your server/VM.
-
-        Update the proxy targets in gateway/.env to your public URLs.
-
-Project Structure
-
-chatgpt-chat-app/
-├── backend/
-│   ├── server.js          # Express + OpenAI handler
-│   ├── .env               # OpenAI key, port
-│   └── package.json
-├── gateway/
-│   ├── proxy.js           # HTTP proxy server
-│   └── package.json
-├── frontend/
-│   ├── chat.html          # Main chat UI
-│   ├── login.html         # Login form
-│   ├── signup.html        # Signup form
-│   ├── main.js            # Firebase init & auth wiring
-│   ├── chat.js            # Chat session logic
-│   ├── login.js, signup.js
-│   ├── firebase-config.js # Firebase SDK config
-│   ├── styles.css
-│   └── package.json
-├── package.json           # Root workspace config
-└── .gitignore
-
-Contributing
-
-    Fork the repo
-
-    Create a feature branch
-
-    Commit and push
-
-    Open a PR
+```bash
+.
+├── backend
+├── gateway
+├── frontend
+├── automation_bridge
+├── automation_server
+├── package.json
+├── requirements.txt
+└── README.md
+```
