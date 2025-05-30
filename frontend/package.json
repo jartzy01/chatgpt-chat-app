@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel serve ./chat.html ./login.html ./signup.html --open --no-hmr",
+    "dev": "parcel serve ./chat.html ./login.html ./signup.html --no-hmr",
     "build": "parcel build chat.html --dist-dir dist"
   },
   "keywords": [],
